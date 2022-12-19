@@ -14,7 +14,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
 const Post: React.FC<PostProps> = (props) => {
   const handleDeletePost = async () => {
-    const res = await fetch(`/api/posts/${props.id}`, {
+    const res = await fetch(`/api/post/${props.id}`, {
       method: "DELETE",
     })
     if (res.status === 200) {

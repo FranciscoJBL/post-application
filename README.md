@@ -42,7 +42,13 @@ with your own.
 - push the main database schema
 
 ```bash
-npx prisma bd push
+npx prisma db push
+```
+
+- Then, generate the prisma library
+    
+```bash
+npx prisma generate
 ```
 
 <b>Note</b>: at this point, you can run the default prisma maintainer to see the database schema and add/modify the data in it with the following command:
@@ -56,11 +62,11 @@ npx prisma studio
 npm run dev
 ```
 
+- You should be able to access the application in `http://localhost:3000`
+
 ## How to use
 
 - The aplication has a login page, where you can login with an existing account or create a new one. For testing purposes, if you try to log in with a non existing account, it will create a new one with the credentials you provided.
 
 - Once logged in, you can see the list of posts, apply filters and create new ones.
 - If you check the post details clicking in one of the posts, you can see the details of the post and delete it.
-
-

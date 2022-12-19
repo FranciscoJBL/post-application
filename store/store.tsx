@@ -9,7 +9,7 @@ import {
   PURGE,
   REGISTER,
 } from "redux-persist";
-import storage from "redux-persist/lib/storage"; // almacenamiento local como destino por defecto
+import storage from "redux-persist/lib/storage";
 
 const tokenReducer = (state: any, action: { type: string; payload: any }) => {
   switch (action.type) {

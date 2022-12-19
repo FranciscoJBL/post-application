@@ -35,7 +35,7 @@ const AddPost: React.FC = () => {
     }
 
     setFormError("");
-    fetch("/api/addPost", {
+    fetch("/api/post/createPost", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -46,6 +46,7 @@ const AddPost: React.FC = () => {
         postDescription,
       }),
     }).then((res) => {
+      console.log(res);
       if (res.status === 200) {
         window.location.reload();
       } else {

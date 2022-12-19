@@ -7,7 +7,7 @@ export const fetchPost: any = async (ctx: { params: { id: any; }; }) => {
         },
         include: {
             user: {
-                select: { name: true },
+                select: { email: true },
             },
         },
     });

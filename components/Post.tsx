@@ -4,28 +4,23 @@ import ReactMarkdown from "react-markdown";
 
 export type PostProps = {
   id: string;
-  title: string;
-  author: {
-    name: string;
+  name: string;
+  user: {
     email: string;
   } | null;
-  content: string;
-  published: boolean;
+  description: string;
+  isPublic: boolean;
 };
 
 const Post: React.FC<{ post: PostProps }> = ({ post }) => {
-  const authorName = post.author ? post.author.name : "Unknown author";
+  const authorName = post.user ? post.user.email : "Unknown author";
   return (
-    <div onClick={() => Router.push("/p/[id]", `/p/${post.id}`)}>
-      <h2>{post.title}</h2>
+    <div onClick={() => Router.push("/posts/[id]", `/posts/${post.id}`)}>
+      <div className="postTitle">
+      <span className="titleText">{post.name}</span>
       <small>By {authorName}</small>
-      <ReactMarkdown children={post.content} />
-      <style jsx>{`
-        div {
-          color: inherit;
-          padding: 2rem;
-        }
-      `}</style>
+      </div>
+      <ReactMarkdown children={post.description} />
     </div>
   );
 };

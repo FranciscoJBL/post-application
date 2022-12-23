@@ -25,7 +25,7 @@ const Home: React.FC<Props> = (props) => {
     if (router.query.search) {
       if (router.query.search === "") {
         setActiveSearch([]);
-      } 
+      }
 
       if (Array.isArray(router.query.search)) {
         setActiveSearch(router.query.search);
